@@ -1,4 +1,4 @@
-use minesweeper::annotate;
+use minesweeper::annotate::annotate;
 
 fn remove_annotations(board: &[&str]) -> Vec<String> {
     board.iter().map(|r| remove_annotations_in_row(r)).collect()

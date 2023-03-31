@@ -143,3 +143,47 @@ fn follow_instructions_to_move_east_and_north() {
     assert_eq!((11, 5), robot.position());
     assert_eq!(&Direction::North, robot.direction());
 }
+
+use clap::Parser;
+
+#[derive(Parser, Debug)]
+#[command(version, long_about = None)]
+struct Args {
+  /// Starting position
+  #[arg(short, long)]
+  x: i32,
+  
+  #[arg(short, long)]
+  y: i32,
+
+  /// Faced to
+  #[arg(short, long)]
+  facing: char,
+
+    /// instructions
+    #[arg(short, long)]
+    commands: String
+}
+impl Args {
+    fn get_direction(&self) -> Direction {
+        let c:char = self.facing.to_ascii_uppercase();
+        
+        match c {
+            'N' => Direction::North,
+            'S' => Direction::South,
+            'E' => Direction::East,
+            'W' => Direction::West,
+            _ => Direction::North
+        }
+    }
+}
+
+#[test]
+fn test_command_line() {
+    let args = Args::parse();
+    let robot = Robot::new(args.x,args.y,args.get_direction()).instructions(&args.commands);
+
+    assert_eq!((7,9), robot.position());
+    assert_eq!(&Direction::West, robot.direction());
+
+}

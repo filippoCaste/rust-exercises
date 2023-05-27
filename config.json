@@ -3,7 +3,7 @@
   "slug": "rust",
   "active": true,
   "status": {
-    "concept_exercises": true,
+    "concept_exercises": false,
     "test_runner": true,
     "representer": true,
     "analyzer": true
@@ -1507,6 +1507,30 @@
           "strings"
         ],
         "status": "deprecated"
+      },
+      {
+        "slug": "knapsack",
+        "name": "Knapsack",
+        "uuid": "cbccd0c5-eb15-4705-9a4c-0209861f078c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
+        "slug": "kindergarten-garden",
+        "name": "Kindergarten Garden",
+        "uuid": "c27e4878-28a4-4637-bde2-2af681a7ff0d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
+        "slug": "yacht",
+        "name": "Yacht",
+        "uuid": "1a0e8e34-f578-4a53-91b0-8a1260446553",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
       }
     ],
     "foregone": [
